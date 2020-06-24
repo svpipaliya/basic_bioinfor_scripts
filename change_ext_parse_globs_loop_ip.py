@@ -1,15 +1,15 @@
 #!/usr/bin/env python 
 
 #following will change file kraken fastq report extension to .txt
-# this part of the code works
-#import os,sys
-#folder = 'report_to_text_to_csv/subfolder/'
-#for filename in os.listdir(folder):
-       #infilename = os.path.join(folder,filename)
-#       if not os.path.isfile(infilename): continue
-#       oldbase = os.path.splitext(filename)
-#       newname = infilename.replace('.report', '.txt')
-#       output = os.rename(infilename, newname)
+#this part of the code works
+import os,sys
+folder = 'report_to_text_to_csv/subfolder/'
+for filename in os.listdir(folder):
+       infilename = os.path.join(folder,filename)
+       if not os.path.isfile(infilename): continue
+       oldbase = os.path.splitext(filename)
+       newname = infilename.replace('.report', '.txt')
+       output = os.rename(infilename, newname)
        
 # following will parse the text files to csv       
 # this part of the code has unknown error
@@ -35,17 +35,17 @@ for txt_file in glob.glob(txt_files):
             writer.writeheader()
 #following will compile all csv files into single combined csv spreadsheet
 # this part of the code works
-#import os
-#import glob
-#import pandas as pd
-#os.chdir("/Users/ShwetaPipaliya/Desktop/report_to_text_to_csv/subfolder/:")
+import os
+import glob
+import pandas as pd
+os.chdir("/Users/ShwetaPipaliya/Desktop/report_to_text_to_csv/subfolder/:")
 
-#extension = 'csv'
-#all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
+extension = 'csv'
+all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
 
-#combine all files in the list
-#combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
-#export to csv
-#combined_csv.to_csv("combined_csv.csv", index=False, encoding='utf-8-sig')
+combine all files in the list
+combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
+export to csv
+combined_csv.to_csv("combined_csv.csv", index=False, encoding='utf-8-sig')
 
 ##End
