@@ -12,7 +12,7 @@
 #       output = os.rename(infilename, newname)
        
 # following will parse the text files to csv       
-# this part of the code works
+# this part of the code has unknown error
 import csv
 import glob
 import os
@@ -34,6 +34,7 @@ for txt_file in glob.glob(txt_files):
             out_csv.writerows(in_txt)
             writer.writeheader()
 #following will compile all csv files into single combined csv spreadsheet
+# this part of the code works
 #import os
 #import glob
 #import pandas as pd
